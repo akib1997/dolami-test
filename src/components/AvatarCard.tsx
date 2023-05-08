@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { IAvatarCard } from "../models/avatart-card.model";
 import useOnClickOutside from "../utils/useOnClickOutside";
 import useCopyToClipboard from "../utils/useCopyToClipboard";
@@ -12,7 +12,7 @@ const AvatarCard = ({ data }: IAvatarCardProps) => {
   const [copyTooltip, setCopyTooltip] = useState<Boolean>(false);
   const [liked, setLiked] = useState<Boolean | null | string>(false);
   const ref = useRef<HTMLDivElement>(null);
-  const [value, copyLink] = useCopyToClipboard();
+  const [_, copyLink] = useCopyToClipboard();
 
   useOnClickOutside(ref, () => {
     setCopy(false)
