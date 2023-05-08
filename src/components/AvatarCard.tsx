@@ -39,14 +39,14 @@ const AvatarCard = ({ data }: IAvatarCardProps) => {
         <IconCart /> <span>Add</span>
       </button>
       <img
-        src={`http://localhost:5173/src/assets/avatar-pictures/avatar(${Number(
+        src={`/avatar-pictures/avatar(${Number(
           data.id
         )}).png`}
         alt={data.title}
         className="w-full block"
       />
       <div className="p-2">
-        <p className="font-medium text-sm sm:text-base">{data.copyUrl}</p>
+        <p className="font-medium text-sm sm:text-base">{data.title}</p>
         <div className="flex items-center mb-1">
           <ul>
             <li>
@@ -112,7 +112,7 @@ const AvatarCard = ({ data }: IAvatarCardProps) => {
               <p className="font-medium text-xs">Copy Link</p>
             </div>
           ) : null}
-          <p className="text-[11px] font-medium">
+          <p className="text-[11px] font-medium pr-4">
             Auto upload service ready, you can use this avatar within 24 hours.
           </p>
           <button onClick={() => toggleCopy(data.id)}>
@@ -122,7 +122,7 @@ const AvatarCard = ({ data }: IAvatarCardProps) => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-4 h-6"
+              className="w-5 h-6"
             >
               <path
                 strokeLinecap="round"
